@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gautam Omkar | Full Stack Developer & Creative Technologist</title>
+  <meta name="description"
+    content="Personal portfolio of Gautam - Full Stack Engineer, Creative Technologist, and UI/UX Craftsman building fast, scalable, and intelligent web experiences.">
+  <meta name="author" content="Gautam Omkar">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Ambient Interactive Canvas Background -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Custom Cursor Elements (Desktop only) -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+
+       <!-- Navigation Bar -->
+  <header class="navbar" id="main-navbar">
+    <div class="container">
+      <a href="#hero" class="brand-logo" id="brand-logo" aria-label="Gautam's Portfolio Home">
+        <span class="brand-dot"></span>
+        <span>Gautam<span class="text-gradient">.dev</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active" id="nav-link-hero">Home</a></li>
+          <li><a href="#about" class="nav-link" id="nav-link-about">About</a></li>
+          <li><a href="#skills" class="nav-link" id="nav-link-skills">Skills</a></li>
+          <li><a href="#projects" class="nav-link" id="nav-link-projects">Projects</a></li>
+          <li><a href="#contact" class="nav-link" id="nav-link-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Action Controls -->
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button class="btn-icon" id="theme-toggle" aria-label="Toggle Theme (Dark / Cyber / Light)"
+          title="Switch Theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Open mobile navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+         <!-- 1. Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Content -->
+          <div class="hero-content">
+            <div class="badge" id="hero-badge">
+              <span class="badge-pulse-dot"></span>
+              <span>Available for new projects & roles</span>
+            </div>
+
+            <span class="hero-greeting">Hi there, I am</span>
+            <h1 class="hero-name">Gautam <span class="text-gradient">Omkar</span></h1>
+
+            <div class="hero-role-wrapper">
+              <span>I craft </span>
+              <span class="typed-role" id="typed-role">Full Stack Developer</span>
+            </div>
+
+            <p class="hero-bio">
+              Passionate about building resilient, ultra-responsive web applications,
+              intelligent distributed systems, and delightful digital user experiences.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary" id="hero-view-work-btn">
+                <span>Explore My Work</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+
+              <a href="#contact" class="btn btn-secondary" id="hero-contact-btn">
+                <span>Get In Touch</span>
+              </a>
+
+            </div>
+
+            <!-- Stats Counters -->
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number" data-target="20" data-suffix="+">20+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-target="95" data-suffix="%">95%</span>
+                <span class="stat-label">Client Satisfaction</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" data-target="10" data-suffix="K+">10K+</span>
+                <span class="stat-label">Lines of Code</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image & Interactive Floating Badges -->
+          <div class="hero-visual">
+            <div class="avatar-wrapper" id="hero-avatar-card">
+              <div class="avatar-img-container">
+                <img src="assets/avatar.jpg" alt="Shalu - Full Stack Engineer & Technologist" class="avatar-img"
+                  id="hero-avatar-img">
+              </div>
+
+              <!-- Floating Tech Badges -->
+              <div class="floating-chip chip-1" id="chip-fullstack">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                <span>Full-Stack Mastery</span>
+              </div>
+
+              <div class="floating-chip chip-2" id="chip-cloud">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+                <span>Cloud & DevOps</span>
+              </div>
+
+              <div class="floating-chip chip-3" id="chip-ui">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                </svg>
+                <span>Pixel-Perfect UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         2. About Section
+         ====================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">About Me</div>
+          <h2 class="section-title">Bridging <span class="text-gradient">Creative Design</span> & Engineering Rigor</h2>
+          <p class="section-desc">Building software that not only functions flawlessly at scale, but feels intuitively
+            magical in every micro-interaction.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-narrative">
+            <p class="about-p">
+              Hello! I am <strong>Shalu</strong>, a software engineer with an obsession for high performance, intuitive
+              human-centered design, and elegant code architecture. With over 4 years of dedicated development
+              experience, I take complex engineering problems and transform them into intuitive digital products.
+            </p>
+            <p class="about-p">
+              My core background spans modern TypeScript frontends, microservices, cloud deployments, and integrating
+              next-generation AI workflows. When I build, I obsess over milliseconds of latency, accessibility
+              standards, and seamless cross-platform performance.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-box">
+                <div class="highlight-icon">⚡</div>
+                <div class="highlight-title">Performance Focused</div>
+                <div class="highlight-desc">Sub-second load times, optimized Core Web Vitals, and smooth 60fps
+                  animations.</div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-icon">🛡️</div>
+                <div class="highlight-title">Clean Architecture</div>
+                <div class="highlight-desc">Maintainable, test-driven, modular code designed to evolve seamlessly over
+                  time.</div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-icon">🤖</div>
+                <div class="highlight-title">Modern AI Pipelines</div>
+                <div class="highlight-desc">Integrating LLMs, vector search, and automated orchestration workflows.
+                </div>
+              </div>
+              <div class="highlight-box">
+                <div class="highlight-icon">🎨</div>
+                <div class="highlight-title">Design Engineering</div>
+                <div class="highlight-desc">Bridging Figma concepts to reality with bespoke CSS tokens and responsive
+                  grids.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- What I Bring / Core Pillars Cards -->
+          <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem;">My Engineering Philosophy</h3>
+            <div style="border-left: 3px solid var(--accent-cyan); padding-left: 1.25rem;">
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--text-main);">1. Purpose-Driven Code
+              </h4>
+              <p style="color: var(--text-muted); font-size: 0.92rem;">Every line of code exists to solve real user
+                friction, not just to demonstrate technical complexity.</p>
+            </div>
+            <div style="border-left: 3px solid var(--accent-indigo); padding-left: 1.25rem;">
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--text-main);">2. Continuous Evolution
+              </h4>
+              <p style="color: var(--text-muted); font-size: 0.92rem;">Staying on the frontier of web standards, cloud
+                infrastructure, and modern browser capabilities.</p>
+            </div>
+            <div style="border-left: 3px solid var(--accent-purple); padding-left: 1.25rem;">
+              <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--text-main);">3. Deep Collaboration</h4>
+              <p style="color: var(--text-muted); font-size: 0.92rem;">Clear documentation, empathetic code reviews, and
+                transparent communication across teams.</p>
+            </div>
+
+            <div style="margin-top: 1rem; display: flex; gap: 1rem;">
+              <a href="#contact" class="btn btn-primary" style="flex: 1;">Start a Conversation</a>
+              <button class="btn btn-secondary resume-download-btn" style="flex: 1;">View Resume</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Four Core Pillars -->
+        <div class="pillars-grid">
+          <div class="glass-card pillar-card">
+            <div class="pillar-icon-box">💻</div>
+            <h3 class="pillar-title">Frontend Engineering</h3>
+            <p class="pillar-text">Crafting responsive, accessible, stateful web apps with React, Next.js, TypeScript,
+              and modern CSS.</p>
+          </div>
+
+          <div class="glass-card pillar-card">
+            <div class="pillar-icon-box">⚙️</div>
+            <h3 class="pillar-title">Backend & Cloud APIs</h3>
+            <p class="pillar-text">Designing robust REST/GraphQL endpoints, microservices, database schemas with
+              Node.js, Python, and PostgreSQL.</p>
+          </div>
+
+          <div class="glass-card pillar-card">
+            <div class="pillar-icon-box">🧠</div>
+            <h3 class="pillar-title">AI & Smart Automation</h3>
+            <p class="pillar-text">Building agentic workflows, embeddings retrieval, automated pipelines, and
+              intelligent interfaces.</p>
+          </div>
+
+          <div class="glass-card pillar-card">
+            <div class="pillar-icon-box">🚀</div>
+            <h3 class="pillar-title">DevOps & Infrastructure</h3>
+            <p class="pillar-text">Deploying continuous delivery pipelines, Docker containers, serverless architectures,
+              and monitoring.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. Skills & Technologies Section
+         ====================================================================== -->
+    <section class="section" id="skills" style="background: rgba(255, 255, 255, 0.015);">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Tech Stack & Expertise</div>
+          <h2 class="section-title">My Technical <span class="text-gradient">Arsenal</span></h2>
+          <p class="section-desc">Technologies and tools I leverage daily to engineer fast, resilient, and
+            enterprise-grade software products.</p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="skills-tabs" role="tablist">
+          <button class="tab-btn active" data-category="all" role="tab" id="tab-all">All Technologies</button>
+          <button class="tab-btn" data-category="frontend" role="tab" id="tab-frontend">Frontend</button>
+          <button class="tab-btn" data-category="backend" role="tab" id="tab-backend">Backend & DB</button>
+          <button class="tab-btn" data-category="cloud" role="tab" id="tab-cloud">Cloud & DevOps</button>
+          <button class="tab-btn" data-category="tools" role="tab" id="tab-tools">Tools & AI</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid-container">
+          <!-- React / Next.js -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">⚛️</span>
+                <span class="skill-name">React & Next.js</span>
+              </div>
+              <span class="skill-level-text">95%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="95%"></div>
+            </div>
+          </div>
+
+          <!-- TypeScript -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🟦</span>
+                <span class="skill-name">TypeScript</span>
+              </div>
+              <span class="skill-level-text">92%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="92%"></div>
+            </div>
+          </div>
+
+          <!-- JavaScript (ESNext) -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🟨</span>
+                <span class="skill-name">Modern JavaScript (ESNext)</span>
+              </div>
+              <span class="skill-level-text">96%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="96%"></div>
+            </div>
+          </div>
+
+          <!-- HTML5 & Modern CSS3 -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🎨</span>
+                <span class="skill-name">HTML5 / CSS3 / Animations</span>
+              </div>
+              <span class="skill-level-text">98%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="98%"></div>
+            </div>
+          </div>
+
+          <!-- Node.js & Express -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🟩</span>
+                <span class="skill-name">Node.js & Express</span>
+              </div>
+              <span class="skill-level-text">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="90%"></div>
+            </div>
+          </div>
+
+          <!-- Python & FastAPI -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🐍</span>
+                <span class="skill-name">Python & FastAPI</span>
+              </div>
+              <span class="skill-level-text">88%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="88%"></div>
+            </div>
+          </div>
+
+          <!-- PostgreSQL & Prisma -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🐘</span>
+                <span class="skill-name">PostgreSQL & Prisma ORM</span>
+              </div>
+              <span class="skill-level-text">86%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="86%"></div>
+            </div>
+          </div>
+
+          <!-- MongoDB & Redis -->
+          <div class="skill-card" data-category="backend">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🍃</span>
+                <span class="skill-name">MongoDB & Redis Cache</span>
+              </div>
+              <span class="skill-level-text">84%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="84%"></div>
+            </div>
+          </div>
+
+          <!-- Docker & Containerization -->
+          <div class="skill-card" data-category="cloud">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🐳</span>
+                <span class="skill-name">Docker & Microservices</span>
+              </div>
+              <span class="skill-level-text">85%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="85%"></div>
+            </div>
+          </div>
+
+          <!-- AWS & Vercel Cloud -->
+          <div class="skill-card" data-category="cloud">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">☁️</span>
+                <span class="skill-name">AWS / CI-CD / Vercel</span>
+              </div>
+              <span class="skill-level-text">87%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="87%"></div>
+            </div>
+          </div>
+
+          <!-- AI & LLM Integration -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🧠</span>
+                <span class="skill-name">LLM Orchestration & OpenAI</span>
+              </div>
+              <span class="skill-level-text">90%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="90%"></div>
+            </div>
+          </div>
+
+          <!-- Git & GitHub Actions -->
+          <div class="skill-card" data-category="tools">
+            <div class="skill-header">
+              <div class="skill-info">
+                <span style="font-size: 1.5rem;">🔧</span>
+                <span class="skill-name">Git & Automated Workflows</span>
+              </div>
+              <span class="skill-level-text">94%</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" data-width="94%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. Featured Projects Section
+         ====================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Portfolio Work</div>
+          <h2 class="section-title">Selected <span class="text-gradient">Creations</span></h2>
+          <p class="section-desc">A showcase of production-ready systems, full-stack applications, and interactive
+            digital experiences.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all" id="proj-filter-all">All Works</button>
+          <button class="filter-btn" data-filter="AI & Cloud" id="proj-filter-ai">AI & Cloud</button>
+          <button class="filter-btn" data-filter="Full Stack" id="proj-filter-fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="Dev Tools" id="proj-filter-tools">Dev Tools</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="projects-grid" id="projects-grid">
+          <!-- Project 1: NexusAI -->
+          <article class="project-card" data-category="AI & Cloud">
+            <div class="project-thumb">
+              <img src="assets/project1.jpg" alt="NexusAI - Autonomous Orchestration Hub" class="project-img">
+              <div class="project-overlay">
+                <button class="btn btn-primary open-modal-btn" data-id="1">Quick View</button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">AI Orchestration</span>
+                <span class="project-tag">Next.js 15</span>
+                <span class="project-tag">WebSockets</span>
+              </div>
+              <h3 class="project-title">NexusAI Hub</h3>
+              <p class="project-desc">
+                High-performance dashboard orchestrating autonomous agent swarms with real-time neural topology
+                visualization, latency telemetry, and distributed compute scaling.
+              </p>
+              <div class="project-footer">
+                <button class="project-link-btn open-modal-btn" data-id="1">
+                  <span>View Project Specs</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+                <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-emerald);">● Live
+                  Online</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Emerald Analytics -->
+          <article class="project-card" data-category="Full Stack">
+            <div class="project-thumb">
+              <img src="assets/project2.jpg" alt="Emerald Analytics - Headless E-Commerce Suite" class="project-img">
+              <div class="project-overlay">
+                <button class="btn btn-primary open-modal-btn" data-id="2">Quick View</button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">E-Commerce</span>
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">Stripe API</span>
+              </div>
+              <h3 class="project-title">Emerald Commerce Suite</h3>
+              <p class="project-desc">
+                Enterprise headless commerce analytics platform handling 10k+ daily transactions with sub-second order
+                fulfillment, inventory syncing, and automated revenue reconciliation.
+              </p>
+              <div class="project-footer">
+                <button class="project-link-btn open-modal-btn" data-id="2">
+                  <span>View Project Specs</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+                <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-cyan);">●
+                  Enterprise</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Carbon Studio -->
+          <article class="project-card" data-category="Dev Tools">
+            <div class="project-thumb">
+              <img src="assets/project3.jpg" alt="Carbon Studio - Realtime Collaborative IDE" class="project-img">
+              <div class="project-overlay">
+                <button class="btn btn-primary open-modal-btn" data-id="3">Quick View</button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="project-tag">WebRTC</span>
+                <span class="project-tag">Monaco Editor</span>
+                <span class="project-tag">WebAssembly</span>
+              </div>
+              <h3 class="project-title">Carbon Code Studio</h3>
+              <p class="project-desc">
+                In-browser collaborative coding environment with real-time multi-user cursor sync, zero-latency AST
+                syntax analysis, and sandboxed live preview rendering.
+              </p>
+              <div class="project-footer">
+                <button class="project-link-btn open-modal-btn" data-id="3">
+                  <span>View Project Specs</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </button>
+                <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-purple);">● Open
+                  Source</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- 7. Interactive Contact Section -->
+    <section class="section" id="contact" style="background: rgba(255, 255, 255, 0.015);">
+      <div class="container">
+        <div class="section-header">
+          <div class="badge">Get in Touch</div>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-desc">Have a project in mind, seeking technical consultation, or looking for a talented
+            engineer? Drop a message!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Cards Info -->
+          <div class="contact-info">
+            <!-- Email Card with Copy Pill -->
+            <div class="contact-card">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Direct Email</h4>
+                <p>gautam.codes@gmail.com</p>
+                <button class="copy-pill" id="copy-email-btn" title="Copy email address">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Click to copy email</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>GitHub</h4>
+                <a href="https://github.com/gautamomkar-08" target="_blank"
+                  rel=" noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">
+                  https://github.com/gautamomkar-08
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>LinkedIn</h4>
+                <a href="https://linkedin.com/in/gautamomkar" target="_blank"
+                  rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">
+                  https://linkedin.com/in/gautamomkar
+                </a>
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Location & Timezone</h4>
+                <p>Available Globally (IST / Remote)</p>
+                <span style="font-size: 0.8rem; color: var(--accent-emerald);">● Ready for Full-time & Remote
+                  contracts</span>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#hero" class="brand-logo">
+          <span class="brand-dot"></span>
+          <span>Gautam<span class="text-gradient">.dev</span></span>
+        </a>
+
+        <ul class="footer-nav">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Gautam. Crafted with precision using Vanilla HTML, CSS & JavaScript.</p>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <span>Designed for Speed, Beauty & Accessibility</span>
+          <a href="#hero" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       Project Details Modal (Dynamic)
+       ======================================================================== -->
+  <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div
+        style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 1.5rem; aspect-ratio: 16/9; background: var(--bg-primary);">
+        <img src="" alt="Project Preview Screenshot" id="modal-img"
+          style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="project-tags" id="modal-tags" style="margin-bottom: 0.8rem;"></div>
+
+      <h3 id="modal-title"
+        style="font-family: var(--font-heading); font-size: 1.85rem; margin-bottom: 0.8rem; color: var(--text-main);">
+      </h3>
+
+      <p id="modal-desc" style="color: var(--text-muted); font-size: 1.02rem; line-height: 1.7; margin-bottom: 1.5rem;">
+      </p>
+
+      <div
+        style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+        <h4
+          style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-cyan); margin-bottom: 0.6rem;">
+          Key Technical Achievements</h4>
+        <ul id="modal-metrics"
+          style="padding-left: 1.25rem; color: var(--text-main); font-size: 0.92rem; line-height: 1.8;"></ul>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="modal-live-link">
+          <span>Live Demo Experience</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-secondary" id="modal-github-link">
+          <span>Source Code (GitHub)</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+            </path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="status-toast" class="toast-msg" aria-live="polite"></div>
+
+  <!-- Main Application Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
