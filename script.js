@@ -1,46 +1,4 @@
-/**
- * Portfolio Interactive Logic
- * Modern vanilla JavaScript providing dynamic UI interactions, animations,
- * ambient canvas effects, theme management, and modal controls.
- */
 
-// --- 1. Sound Effects (Web Audio API Synthesizer) ---
-class SoundController {
-  constructor() {
-    this.ctx = null;
-    this.enabled = false; // off by default or togglable
-  }
-
-  init() {
-    if (!this.ctx && (window.AudioContext || window.webkitAudioContext)) {
-      this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-    }
-  }
-
-  playPop(freq = 600, type = 'sine', duration = 0.08) {
-    if (!this.enabled) return;
-    this.init();
-    if (!this.ctx) return;
-    if (this.ctx.state === 'suspended') {
-      this.ctx.resume();
-    }
-    const osc = this.ctx.createOscillator();
-    const gain = this.ctx.createGain();
-    osc.type = type;
-    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(freq * 0.5, this.ctx.currentTime + duration);
-    gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + duration);
-    osc.connect(gain);
-    gain.connect(this.ctx.destination);
-    osc.start();
-    osc.stop(this.ctx.currentTime + duration);
-  }
-}
-
-const sound = new SoundController();
-
-// --- 2. Ambient Interactive Canvas Background ---
 function initAmbientCanvas() {
   const canvas = document.getElementById('ambient-canvas');
   if (!canvas) return;
@@ -140,7 +98,7 @@ function initAmbientCanvas() {
   animate();
 }
 
-// --- 3. Typing Effect in Hero ---
+//  Typing Effect in Hero
 function initTypingEffect() {
   const target = document.getElementById('typed-role');
   if (!target) return;
@@ -187,7 +145,7 @@ function initTypingEffect() {
   type();
 }
 
-// --- 4. Stats Counter on Scroll ---
+// Stats Counter on Scroll
 function initCounters() {
   const statNumbers = document.querySelectorAll('.stat-number');
   if (!statNumbers.length) return;
@@ -225,7 +183,7 @@ function initCounters() {
   if (statsSection) observer.observe(statsSection);
 }
 
-// --- 5. Custom Cursor (Desktop) ---
+// Custom Cursor (Desktop)
 function initCustomCursor() {
   const cursor = document.querySelector('.custom-cursor');
   const dot = document.querySelector('.custom-cursor-dot');
@@ -249,7 +207,7 @@ function initCustomCursor() {
   renderCursor();
 
   // Hover state on links & buttons
-  const interactives = document.querySelectorAll('a, button, input, textarea, .glass-card, .clickable');
+  const interactives = document.querySelectorAll('a, button, .glass-card, .clickable');
   interactives.forEach((el) => {
     el.addEventListener('mouseenter', () => {
       cursor.style.width = '42px';
@@ -266,7 +224,7 @@ function initCustomCursor() {
   });
 }
 
-// --- 6. Navbar Scroll & Active Section Spy ---
+// Navbar Scroll & Active Section Spy
 function initNav() {
   const nav = document.querySelector('.navbar');
   const toggle = document.querySelector('.mobile-toggle');
@@ -313,7 +271,7 @@ function initNav() {
   }
 }
 
-// --- 7. Skills Tab Filter & Animation ---
+// Skills Tab Filter & Animation
 function initSkills() {
   const tabBtns = document.querySelectorAll('.tab-btn');
   const skillCards = document.querySelectorAll('.skill-card');
@@ -356,7 +314,7 @@ function initSkills() {
   });
 }
 
-// --- 8. Projects Filter & Project Detail Modal ---
+// Projects Filter & Project Detail Modal
 const projectData = {
   1: {
     title: 'NexusAI - Autonomous Orchestration Hub',
@@ -366,7 +324,7 @@ const projectData = {
       'A high-performance orchestration control dashboard for enterprise autonomous agents. Features real-time neural network topology visualization, automated task dispatching, latency telemetry, and adaptive compute scaling.',
     tags: ['Next.js 15', 'TypeScript', 'Node.js', 'Python', 'Tailwind', 'WebSocket'],
     metrics: ['99.98% System Uptime', '14ms Telemetry Latency', '84 Active Parallel Models'],
-    github: 'https://github.com/shalu/nexus-ai-orchestration',
+    github: 'https://github.com/gautam/nexus-ai-orchestration',
     live: 'https://nexusai.demo.dev'
   },
   2: {
@@ -377,7 +335,7 @@ const projectData = {
       'Ultra-fast enterprise e-commerce platform with real-time financial tracking, inventory management, dynamic conversion analytics, and seamless payment gateway orchestration.',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Stripe API', 'Redis', 'Docker'],
     metrics: ['$124k+ Monthly Volume Processed', '4.1% Conversion Rate Optimization', '0.4s Fast Checkout'],
-    github: 'https://github.com/shalu/emerald-analytics',
+    github: 'https://github.com/gautam/emerald-analytics',
     live: 'https://emeraldanalytics.demo.dev'
   },
   3: {
@@ -388,7 +346,7 @@ const projectData = {
       'In-browser collaborative code editor & live preview sandbox. Features multi-cursor synchronisation via WebRTC/CRDTs, custom container execution, AST analysis, and integrated visual canvas.',
     tags: ['WebRTC', 'Monaco Editor', 'WebAssembly', 'Rust', 'Vanilla CSS', 'Express'],
     metrics: ['Sub-10ms Typing Sync', '50+ Concurrent Coders per Session', 'Zero Server Memory Leaks'],
-    github: 'https://github.com/shalu/carbon-studio',
+    github: 'https://github.com/gautam/carbon-studio',
     live: 'https://carbonstudio.demo.dev'
   }
 };
@@ -480,7 +438,7 @@ function initProjects() {
   });
 }
 
-// --- 9. Theme Switcher & Sound Toggle ---
+// Theme Switcher & Sound Toggle
 function initThemes() {
   const themeToggle = document.getElementById('theme-toggle');
   const soundToggle = document.getElementById('sound-toggle');
@@ -519,7 +477,7 @@ function initThemes() {
   }
 }
 
-// --- 10. Command Palette (Ctrl+K / Cmd+K) ---
+// Command Palette (Ctrl+K / Cmd+K)
 function initCommandPalette() {
   const cmdOverlay = document.getElementById('cmd-palette-overlay');
   const cmdInput = document.getElementById('cmd-palette-input');
@@ -599,7 +557,7 @@ function initCommandPalette() {
   });
 }
 
-// --- 11. Contact Form & Clipboard Features ---
+// Contact Form & Clipboard Feature
 function showToast(message, isSuccess = true) {
   let toast = document.getElementById('status-toast');
   if (!toast) {
@@ -621,7 +579,7 @@ function showToast(message, isSuccess = true) {
 }
 
 function copyEmailToClipboard() {
-  const email = 'shalu.codes@gmail.com';
+  const email = '.codes@gmail.com';
   navigator.clipboard.writeText(email).then(() => {
     sound.playPop(1000);
     showToast(`Copied ${email} to clipboard!`);
@@ -630,52 +588,7 @@ function copyEmailToClipboard() {
   });
 }
 
-function triggerResumeDownload() {
-  sound.playPop(950);
-  showToast('Generating resume preview... 📄');
-  setTimeout(() => {
-    // Generate simple printable resume or open alert
-    window.print();
-  }, 600);
-}
-
-function initContactForm() {
-  const form = document.getElementById('portfolio-contact-form');
-  const copyBtn = document.getElementById('copy-email-btn');
-
-  if (copyBtn) {
-    copyBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      copyEmailToClipboard();
-    });
-  }
-
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-
-      submitBtn.innerHTML = `
-        <svg style="animation: spin 1s linear infinite; width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
-          <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"></path>
-        </svg> Sending message...
-      `;
-      submitBtn.disabled = true;
-
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-        form.reset();
-        sound.playPop(1100);
-        showToast('Thank you Shalu received your message! I will reply shortly.');
-      }, 1200);
-    });
-  }
-}
-
-// --- DOM Ready Initialization ---
+// DOM Ready Initialization
 document.addEventListener('DOMContentLoaded', () => {
   initAmbientCanvas();
   initTypingEffect();
@@ -687,12 +600,63 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemes();
   initCommandPalette();
   initContactForm();
+});
 
-  // Attach resume triggers
-  document.querySelectorAll('.resume-download-btn').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      triggerResumeDownload();
+// ========================
+// Select all tab buttons and tab contents
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
+
+// Tab Switching
+tabButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        // Remove active class from all buttons
+        tabButtons.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        // Remove active class from all contents
+        tabContents.forEach((content) => {
+            content.classList.remove("active");
+        });
+
+        // Activate clicked button
+        button.classList.add("active");
+
+        // Show selected content
+        const selectedTab = button.dataset.tab;
+
+        document.getElementById(selectedTab).classList.add("active");
+
     });
-  });
+
+});
+
+
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.15
+});
+
+// Observe all reveal elements
+revealElements.forEach((element) => {
+    observer.observe(element);
 });

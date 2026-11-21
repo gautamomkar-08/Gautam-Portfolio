@@ -11,17 +11,17 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
   <!-- Ambient Interactive Canvas Background -->
   <canvas id="ambient-canvas"></canvas>
 
-  <!-- Custom Cursor Elements (Desktop only) -->
-  <div class="custom-cursor" aria-hidden="true"></div>
-  <div class="custom-cursor-dot" aria-hidden="true"></div>
-
-       <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
   <header class="navbar" id="main-navbar">
     <div class="container">
       <a href="#hero" class="brand-logo" id="brand-logo" aria-label="Gautam's Portfolio Home">
@@ -45,10 +45,11 @@
         <!-- Theme Toggle Button -->
         <button class="btn-icon" id="theme-toggle" aria-label="Toggle Theme (Dark / Cyber / Light)"
           title="Switch Theme">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          <!-- <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+          </svg> -->
+          <i class="fa-solid fa-moon" style="color: var(--accent-cyan); font-size: 18px;"></i>
         </button>
 
         <!-- Mobile Menu Toggle Button -->
@@ -62,7 +63,7 @@
   </header>
 
   <main>
-         <!-- 1. Hero Section -->
+    <!--  Hero Section -->
     <section class="hero" id="hero">
       <div class="container">
         <div class="hero-grid">
@@ -121,31 +122,20 @@
           <div class="hero-visual">
             <div class="avatar-wrapper" id="hero-avatar-card">
               <div class="avatar-img-container">
-                <img src="assets/avatar.jpg" alt="Shalu - Full Stack Engineer & Technologist" class="avatar-img"
-                  id="hero-avatar-img">
+                <img src="WhatsApp Image 2026-09-22 at 18.29.22.jpeg" alt="Gautam - Full Stack Engineer & Technologist"
+                  class="avatar-img" id="hero-avatar-img">
               </div>
 
               <!-- Floating Tech Badges -->
               <div class="floating-chip chip-1" id="chip-fullstack">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
                 <span>Full-Stack Mastery</span>
               </div>
 
               <div class="floating-chip chip-2" id="chip-cloud">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
-                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                </svg>
                 <span>Cloud & DevOps</span>
               </div>
 
               <div class="floating-chip chip-3" id="chip-ui">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2">
-                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
-                </svg>
                 <span>Pixel-Perfect UI</span>
               </div>
             </div>
@@ -154,123 +144,205 @@
       </div>
     </section>
 
-    <!-- ======================================================================
-         2. About Section
-         ====================================================================== -->
-    <section class="section" id="about">
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+
       <div class="container">
-        <div class="section-header">
-          <div class="badge">About Me</div>
-          <h2 class="section-title">Bridging <span class="text-gradient">Creative Design</span> & Engineering Rigor</h2>
-          <p class="section-desc">Building software that not only functions flawlessly at scale, but feels intuitively
-            magical in every micro-interaction.</p>
+
+        <!-- Section Heading -->
+        <div class="section-heading reveal">
+          <span class="section-tag">GET TO KNOW ME</span>
+          <h1>About <span>Me</span></h1>
+          <p>A little introduction about who I am and what I do.</p>
         </div>
 
-        <div class="about-grid">
-          <div class="about-narrative">
-            <p class="about-p">
-              Hello! I am <strong>Shalu</strong>, a software engineer with an obsession for high performance, intuitive
-              human-centered design, and elegant code architecture. With over 4 years of dedicated development
-              experience, I take complex engineering problems and transform them into intuitive digital products.
-            </p>
-            <p class="about-p">
-              My core background spans modern TypeScript frontends, microservices, cloud deployments, and integrating
-              next-generation AI workflows. When I build, I obsess over milliseconds of latency, accessibility
-              standards, and seamless cross-platform performance.
-            </p>
+        <!-- About Content -->
+        <div class="about-content">
 
-            <div class="about-highlights">
-              <div class="highlight-box">
-                <div class="highlight-icon">⚡</div>
-                <div class="highlight-title">Performance Focused</div>
-                <div class="highlight-desc">Sub-second load times, optimized Core Web Vitals, and smooth 60fps
-                  animations.</div>
+          <!-- Left Side -->
+          <div class="about-left reveal">
+
+            <div class="profile-card">
+
+              <div class="profile-icon">
+                <i class="fa-solid fa-code"></i>
               </div>
-              <div class="highlight-box">
-                <div class="highlight-icon">🛡️</div>
-                <div class="highlight-title">Clean Architecture</div>
-                <div class="highlight-desc">Maintainable, test-driven, modular code designed to evolve seamlessly over
-                  time.</div>
-              </div>
-              <div class="highlight-box">
-                <div class="highlight-icon">🤖</div>
-                <div class="highlight-title">Modern AI Pipelines</div>
-                <div class="highlight-desc">Integrating LLMs, vector search, and automated orchestration workflows.
+
+              <h2>Gautam Omkar</h2>
+              <p class="profile-role">Aspiring Frontend Developer</p>
+
+              <div class="profile-divider"></div>
+
+              <div class="profile-info">
+                <div>
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <span>BCA Student</span>
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Bhopal, India</span>
+                </div>
+
+                <div>
+                  <i class="fa-solid fa-laptop-code"></i>
+                  <span>Web Development</span>
                 </div>
               </div>
-              <div class="highlight-box">
-                <div class="highlight-icon">🎨</div>
-                <div class="highlight-title">Design Engineering</div>
-                <div class="highlight-desc">Bridging Figma concepts to reality with bespoke CSS tokens and responsive
-                  grids.</div>
+
+              <a href="#contact" class="contact-btn">
+                Let's Connect <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- Right Side -->
+          <div class="about-right reveal">
+
+            <span class="small-heading">WHO AM I?</span>
+
+            <h2>
+              Building Digital Experiences
+              <span>With Code & Creativity.</span>
+            </h2>
+
+            <p class="about-description">
+              I enjoy working with HTML, CSS, and JavaScript to
+              transform ideas into interactive web experiences.
+              I am continuously learning new technologies,
+              improving my programming skills, and exploring
+              the world of software development.
+            </p>
+
+            <!-- Tabs -->
+            <div class="tabs">
+
+              <button class="tab-btn active" data-tab="journey">
+                My Journey
+              </button>
+
+              <button class="tab-btn" data-tab="skills">
+                My Skills
+              </button>
+
+            </div>
+
+            <!-- Journey Tab -->
+            <div class="tab-content active" id="journey">
+
+              <div class="journey-item">
+                <span class="journey-dot"></span>
+                <div>
+                  <h3>Bachelor of Computer Applications</h3>
+                  <p>Sam Global University | Currently Pursuing</p>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <!-- What I Bring / Core Pillars Cards -->
-          <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
-            <h3 style="font-family: var(--font-heading); font-size: 1.5rem;">My Engineering Philosophy</h3>
-            <div style="border-left: 3px solid var(--accent-cyan); padding-left: 1.25rem;">
-              <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--text-main);">1. Purpose-Driven Code
-              </h4>
-              <p style="color: var(--text-muted); font-size: 0.92rem;">Every line of code exists to solve real user
-                friction, not just to demonstrate technical complexity.</p>
-            </div>
-            <div style="border-left: 3px solid var(--accent-indigo); padding-left: 1.25rem;">
-              <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--text-main);">2. Continuous Evolution
-              </h4>
-              <p style="color: var(--text-muted); font-size: 0.92rem;">Staying on the frontier of web standards, cloud
-                infrastructure, and modern browser capabilities.</p>
-            </div>
-            <div style="border-left: 3px solid var(--accent-purple); padding-left: 1.25rem;">
-              <h4 style="font-size: 1.05rem; margin-bottom: 0.3rem; color: var(--text-main);">3. Deep Collaboration</h4>
-              <p style="color: var(--text-muted); font-size: 0.92rem;">Clear documentation, empathetic code reviews, and
-                transparent communication across teams.</p>
+              <div class="journey-item">
+                <span class="journey-dot"></span>
+                <div>
+                  <h3>Frontend Development</h3>
+                  <p>Learning HTML, CSS, JavaScript and Bootstrap.</p>
+                </div>
+              </div>
+
+              <div class="journey-item">
+                <span class="journey-dot"></span>
+                <div>
+                  <h3>Building Projects</h3>
+                  <p>Practicing web development through personal projects.</p>
+                </div>
+              </div>
+
             </div>
 
-            <div style="margin-top: 1rem; display: flex; gap: 1rem;">
-              <a href="#contact" class="btn btn-primary" style="flex: 1;">Start a Conversation</a>
-              <button class="btn btn-secondary resume-download-btn" style="flex: 1;">View Resume</button>
+            <!-- Skills Tab -->
+            <div class="tab-content" id="skills">
+
+              <div class="skills-list">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Bootstrap</span>
+                <span>C</span>
+                <span>C++</span>
+                <span>Python</span>
+                <span>Node.js (Basic)</span>
+                <span>MongoDB (Basic)</span>
+                <span>Git & GitHub</span>
+              </div>
+
             </div>
+
+            <!-- Bottom Cards -->
+            <div class="highlights">
+
+              <div class="highlight-card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Creative Thinking</h3>
+                <p>Turning ideas into useful solutions.</p>
+              </div>
+
+              <div class="highlight-card">
+                <i class="fa-solid fa-rocket"></i>
+                <h3>Continuous Learning</h3>
+                <p>Exploring new tools and technologies.</p>
+              </div>
+
+            </div>
+
           </div>
+
         </div>
 
-        <!-- Four Core Pillars -->
-        <div class="pillars-grid">
-          <div class="glass-card pillar-card">
-            <div class="pillar-icon-box">💻</div>
-            <h3 class="pillar-title">Frontend Engineering</h3>
-            <p class="pillar-text">Crafting responsive, accessible, stateful web apps with React, Next.js, TypeScript,
-              and modern CSS.</p>
-          </div>
-
-          <div class="glass-card pillar-card">
-            <div class="pillar-icon-box">⚙️</div>
-            <h3 class="pillar-title">Backend & Cloud APIs</h3>
-            <p class="pillar-text">Designing robust REST/GraphQL endpoints, microservices, database schemas with
-              Node.js, Python, and PostgreSQL.</p>
-          </div>
-
-          <div class="glass-card pillar-card">
-            <div class="pillar-icon-box">🧠</div>
-            <h3 class="pillar-title">AI & Smart Automation</h3>
-            <p class="pillar-text">Building agentic workflows, embeddings retrieval, automated pipelines, and
-              intelligent interfaces.</p>
-          </div>
-
-          <div class="glass-card pillar-card">
-            <div class="pillar-icon-box">🚀</div>
-            <h3 class="pillar-title">DevOps & Infrastructure</h3>
-            <p class="pillar-text">Deploying continuous delivery pipelines, Docker containers, serverless architectures,
-              and monitoring.</p>
-          </div>
-        </div>
       </div>
+
     </section>
 
-    <!-- ======================================================================
-         3. Skills & Technologies Section
-         ====================================================================== -->
+    <!-- Four Core Pillars -->
+    <div class="pillars-grid">
+      <div class="glass-card pillar-card">
+        <div class="pillar-icon-box">
+          <i class="fa-brands fa-react" style="color: #61DAFB; font-size: 30px;"></i>
+        </div>
+        <h3 class="pillar-title">Frontend Engineering</h3>
+        <p class="pillar-text">Crafting responsive, accessible, stateful web apps with React, Next.js, TypeScript,
+          and modern CSS.</p>
+      </div>
+
+      <div class="glass-card pillar-card">
+        <div class="pillar-icon-box">
+          <i class="fa-brands fa-node-js" style="color: green; font-size: 30px;"></i>
+        </div>
+        <h3 class="pillar-title">Backend & Cloud APIs</h3>
+        <p class="pillar-text">Designing robust REST/GraphQL endpoints, microservices, database schemas with
+          Node.js, Python, and PostgreSQL.</p>
+      </div>
+
+      <div class="glass-card pillar-card">
+        <div class="pillar-icon-box">
+          <i class="fa-brands fa-robot" style="color: #FF6B6B; font-size: 30px;"></i>
+        </div>
+        <h3 class="pillar-title">AI & Smart Automation</h3>
+        <p class="pillar-text">Building agentic workflows, embeddings retrieval, automated pipelines, and
+          intelligent interfaces.</p>
+      </div>
+
+      <div class="glass-card pillar-card">
+        <div class="pillar-icon-box">
+          <i class="fa-solid fa-rocket" style="color: #FF6B6B; font-size: 30px;"></i>
+        </div>
+        <h3 class="pillar-title">DevOps & Infrastructure</h3>
+        <p class="pillar-text">Deploying continuous delivery pipelines, Docker containers, serverless architectures,
+          and monitoring.</p>
+      </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Skills & Technologies Section -->
     <section class="section" id="skills" style="background: rgba(255, 255, 255, 0.015);">
       <div class="container">
         <div class="section-header">
@@ -280,22 +352,13 @@
             enterprise-grade software products.</p>
         </div>
 
-        <!-- Category Filter Tabs -->
-        <div class="skills-tabs" role="tablist">
-          <button class="tab-btn active" data-category="all" role="tab" id="tab-all">All Technologies</button>
-          <button class="tab-btn" data-category="frontend" role="tab" id="tab-frontend">Frontend</button>
-          <button class="tab-btn" data-category="backend" role="tab" id="tab-backend">Backend & DB</button>
-          <button class="tab-btn" data-category="cloud" role="tab" id="tab-cloud">Cloud & DevOps</button>
-          <button class="tab-btn" data-category="tools" role="tab" id="tab-tools">Tools & AI</button>
-        </div>
-
         <!-- Skills Grid -->
         <div class="skills-grid" id="skills-grid-container">
           <!-- React / Next.js -->
           <div class="skill-card" data-category="frontend">
             <div class="skill-header">
               <div class="skill-info">
-                <span style="font-size: 1.5rem;">⚛️</span>
+                <i class="fa-brands fa-react" style="color: #61DAFB; font-size: 30px;"></i>
                 <span class="skill-name">React & Next.js</span>
               </div>
               <span class="skill-level-text">95%</span>
@@ -309,7 +372,7 @@
           <div class="skill-card" data-category="frontend">
             <div class="skill-header">
               <div class="skill-info">
-                <span style="font-size: 1.5rem;">🟦</span>
+                <i class="fa-brands fa-typescript" style="color: #3178C6; font-size: 30px;"></i>
                 <span class="skill-name">TypeScript</span>
               </div>
               <span class="skill-level-text">92%</span>
@@ -323,7 +386,7 @@
           <div class="skill-card" data-category="frontend">
             <div class="skill-header">
               <div class="skill-info">
-                <span style="font-size: 1.5rem;">🟨</span>
+                <i class="fa-brands fa-js" style="color: #F7DF1E; font-size: 30px;"></i>
                 <span class="skill-name">Modern JavaScript (ESNext)</span>
               </div>
               <span class="skill-level-text">96%</span>
@@ -337,7 +400,7 @@
           <div class="skill-card" data-category="frontend">
             <div class="skill-header">
               <div class="skill-info">
-                <span style="font-size: 1.5rem;">🎨</span>
+                <i class="fa-brands fa-html5" style="color: yellow; font-size: 30px;"></i>
                 <span class="skill-name">HTML5 / CSS3 / Animations</span>
               </div>
               <span class="skill-level-text">98%</span>
@@ -351,7 +414,7 @@
           <div class="skill-card" data-category="backend">
             <div class="skill-header">
               <div class="skill-info">
-                <span style="font-size: 1.5rem;">🟩</span>
+                <i class="fa-brands fa-node-js" style="color: green; font-size: 30px;"></i>
                 <span class="skill-name">Node.js & Express</span>
               </div>
               <span class="skill-level-text">90%</span>
@@ -365,7 +428,7 @@
           <div class="skill-card" data-category="backend">
             <div class="skill-header">
               <div class="skill-info">
-                <span style="font-size: 1.5rem;">🐍</span>
+                <i class="fa-brands fa-python" style="color: #306998; font-size: 30px;"></i>
                 <span class="skill-name">Python & FastAPI</span>
               </div>
               <span class="skill-level-text">88%</span>
@@ -375,12 +438,12 @@
             </div>
           </div>
 
-          <!-- PostgreSQL & Prisma -->
+          <!-- MongoDB -->
           <div class="skill-card" data-category="backend">
             <div class="skill-header">
               <div class="skill-info">
-                <span style="font-size: 1.5rem;">🐘</span>
-                <span class="skill-name">PostgreSQL & Prisma ORM</span>
+                <i class="fa-solid fa-database" style="color: #47A248; font-size: 30px;"></i>
+                <span class="skill-name">MongoDB</span>
               </div>
               <span class="skill-level-text">86%</span>
             </div>
@@ -389,68 +452,12 @@
             </div>
           </div>
 
-          <!-- MongoDB & Redis -->
-          <div class="skill-card" data-category="backend">
-            <div class="skill-header">
-              <div class="skill-info">
-                <span style="font-size: 1.5rem;">🍃</span>
-                <span class="skill-name">MongoDB & Redis Cache</span>
-              </div>
-              <span class="skill-level-text">84%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-width="84%"></div>
-            </div>
-          </div>
-
-          <!-- Docker & Containerization -->
-          <div class="skill-card" data-category="cloud">
-            <div class="skill-header">
-              <div class="skill-info">
-                <span style="font-size: 1.5rem;">🐳</span>
-                <span class="skill-name">Docker & Microservices</span>
-              </div>
-              <span class="skill-level-text">85%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-width="85%"></div>
-            </div>
-          </div>
-
-          <!-- AWS & Vercel Cloud -->
-          <div class="skill-card" data-category="cloud">
-            <div class="skill-header">
-              <div class="skill-info">
-                <span style="font-size: 1.5rem;">☁️</span>
-                <span class="skill-name">AWS / CI-CD / Vercel</span>
-              </div>
-              <span class="skill-level-text">87%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-width="87%"></div>
-            </div>
-          </div>
-
-          <!-- AI & LLM Integration -->
-          <div class="skill-card" data-category="tools">
-            <div class="skill-header">
-              <div class="skill-info">
-                <span style="font-size: 1.5rem;">🧠</span>
-                <span class="skill-name">LLM Orchestration & OpenAI</span>
-              </div>
-              <span class="skill-level-text">90%</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" data-width="90%"></div>
-            </div>
-          </div>
-
           <!-- Git & GitHub Actions -->
           <div class="skill-card" data-category="tools">
             <div class="skill-header">
               <div class="skill-info">
-                <span style="font-size: 1.5rem;">🔧</span>
-                <span class="skill-name">Git & Automated Workflows</span>
+                <i class="fa-brands fa-git" style="color: #F05033; font-size: 30px;"></i>
+                <span class="skill-name">Git & GitHub Actions</span>
               </div>
               <span class="skill-level-text">94%</span>
             </div>
@@ -462,9 +469,7 @@
       </div>
     </section>
 
-    <!-- ======================================================================
-         4. Featured Projects Section
-         ====================================================================== -->
+    <!-- Featured Projects Section -->
     <section class="section" id="projects">
       <div class="container">
         <div class="section-header">
@@ -472,14 +477,6 @@
           <h2 class="section-title">Selected <span class="text-gradient">Creations</span></h2>
           <p class="section-desc">A showcase of production-ready systems, full-stack applications, and interactive
             digital experiences.</p>
-        </div>
-
-        <!-- Filter Buttons -->
-        <div class="project-filters">
-          <button class="filter-btn active" data-filter="all" id="proj-filter-all">All Works</button>
-          <button class="filter-btn" data-filter="AI & Cloud" id="proj-filter-ai">AI & Cloud</button>
-          <button class="filter-btn" data-filter="Full Stack" id="proj-filter-fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="Dev Tools" id="proj-filter-tools">Dev Tools</button>
         </div>
 
         <!-- Project Grid -->
@@ -585,14 +582,14 @@
         </div>
       </div>
     </section>
-    <!-- 7. Interactive Contact Section -->
+    <!-- Interactive Contact Section -->
     <section class="section" id="contact" style="background: rgba(255, 255, 255, 0.015);">
       <div class="container">
         <div class="section-header">
           <div class="badge">Get in Touch</div>
           <h2 class="section-title">Contact</h2>
           <p class="section-desc">Have a project in mind, seeking technical consultation, or looking for a talented
-            engineer? Drop a message!</p>
+            developer? Drop a message!</p>
         </div>
 
         <div class="contact-grid">
@@ -601,19 +598,12 @@
             <!-- Email Card with Copy Pill -->
             <div class="contact-card">
               <div class="contact-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
+                <i class="fa-solid fa-envelope" style="color: rgb(236, 227, 227); font-size: 22px;"></i>
               </div>
               <div class="contact-details">
                 <h4>Direct Email</h4>
-                <p>gautam.codes@gmail.com</p>
+                <p>gautamomkar3@gmail.com</p>
                 <button class="copy-pill" id="copy-email-btn" title="Copy email address">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
                   <span>Click to copy email</span>
                 </button>
               </div>
@@ -621,41 +611,32 @@
 
             <div class="contact-card">
               <div class="contact-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
+                <i class="fa-brands fa-github" style="color: rgb(236, 227, 227); font-size: 22px;"></i>
               </div>
               <div class="contact-details">
                 <h4>GitHub</h4>
-                <a href="https://github.com/gautamomkar-08" target="_blank"
-                  rel=" noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">
-                  https://github.com/gautamomkar-08
-                </a>
+                <b><a href="https://github.com/gautamomkar-08" target="_blank" rel=" noopener noreferrer"
+                    style="color: rgb(236, 227, 227); text-decoration: none; ">
+                    https://github.com/gautamomkar-08
+                  </a></b>
               </div>
             </div>
 
             <div class="contact-card">
               <div class="contact-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
+                <i class="fa-brands fa-linkedin" style="color: rgb(236, 227, 227); font-size: 22px;"></i>
               </div>
               <div class="contact-details">
                 <h4>LinkedIn</h4>
-                <a href="https://linkedin.com/in/gautamomkar" target="_blank"
-                  rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">
-                  https://linkedin.com/in/gautamomkar
-                </a>
+                <b><a href="https://linkedin.com/in/gautamomkar" target="_blank" rel="noopener noreferrer"
+                    style="color: rgb(236, 227, 227); text-decoration: none;">
+                    https://linkedin.com/in/gautamomkar
+                  </a></b>
               </div>
             </div>
             <div class="contact-card">
               <div class="contact-icon-box">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
+                <i class="fa-solid fa-map-marker-alt" style="color: rgb(236, 227, 227); font-size: 22px;"></i>
               </div>
               <div class="contact-details">
                 <h4>Location & Timezone</h4>
@@ -699,9 +680,7 @@
     </div>
   </footer>
 
-  <!-- ========================================================================
-       Project Details Modal (Dynamic)
-       ======================================================================== -->
+  <!-- Project Details Modal (Dynamic) -->
   <div class="modal-overlay" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-content">
       <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal dialog">
